@@ -77,7 +77,7 @@ def stitch_hulls(outer_hull, inner_hull):
 				if p1 == p2:
 					continue
 				if hull.exists(p1, p2) or not hull.visible(p1, p2) or hull.crosses(p1, p2):
-						continue
+					continue
 				
 				newhull = hull.copy()
 				newhull.add_edge(p1, p2)
@@ -86,6 +86,7 @@ def stitch_hulls(outer_hull, inner_hull):
 				cost = newhull.cost
 				if cost is not None and (minhull.cost is None or cost < minhull.cost):
 					minhull = newhull
+				
 				heapq.heappush(Q, newhull)
 
 	return minhull
