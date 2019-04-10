@@ -76,12 +76,7 @@ def stitch_hulls(outer_hull, inner_hull):
 			for p2 in hull.verts:
 				if p1 == p2:
 					continue
-				if hull.exists(p1, p2):
-					continue
-				if not hull.visible(p1, p2):
-					continue
-				for edge in edges:
-					if hull.crosses(p1, p2):
+				if hull.exists(p1, p2) or not hull.visible(p1, p2) or hull.crosses(p1, p2):
 						continue
 				
 				newhull = hull.copy()
