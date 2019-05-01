@@ -32,15 +32,15 @@ class Hull:
 	
 	# Checks if this edge already exists
 	def exists(self, p1, p2):
-		pass
+		return False
 
 	# Checks if edge crosses other edges that already exist
 	def crosses(self, p1, p2):
-		pass
+		return True
 
 	# Checks if two points are visible, taking into account the current edges
 	def visible(self, p1, p2):
-		pass
+		return True
 	
 	# Turn the hull into a circuit, deleting unnecessary edges
 	# Sets cost to None if a circuit was not found
